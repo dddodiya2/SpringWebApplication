@@ -1,12 +1,53 @@
 package com.learning.mvc.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Student {
 
 	private String firstName;
 	private String lastName;
+	private String country;
+	private String favoriteLang;
+	private String[] knownOS;
+	private Map<String, String> countryOptions;
+	
+	
+	public Map<String, String> getCountryOptions() {
+		return countryOptions;
+	}
+
 
 	public Student() {
-		
+		countryOptions = new HashMap<>();
+		countryOptions.put("India", "IN");
+		countryOptions.put("United States Of America", "USA");
+		countryOptions.put("Canada", "CAN");
+	}
+
+
+	public String[] getKnownOS() {
+		return knownOS;
+	}
+
+	public void setKnownOS(String[] knownOS) {
+		this.knownOS = knownOS;
+	}
+
+	public String getFavoriteLang() {
+		return favoriteLang;
+	}
+
+	public void setFavoriteLang(String favoriteLang) {
+		this.favoriteLang = favoriteLang;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
 	}
 
 	public String getFirstName() {

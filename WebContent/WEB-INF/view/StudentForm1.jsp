@@ -22,7 +22,32 @@
 			<br>
 			Last Name : <form:input path="lastName"></form:input>
 			<br>
-			<input type="submit">
+			Country : <form:select path="country">
+						<%-- <form:option value="India" label="IND"/>
+						<form:option value="United States Of America" label="USA"/>
+						<form:option value="Canada" label="CAN"/>
+						<form:option value="Italy" label="ITL"/> --%>
+						<form:options items="${student.countryOptions}"/>
+					</form:select>
+			<br>
+			Favorite Language : 
+			Java <form:radiobutton path="favoriteLang" value="Java"/> 
+			Python <form:radiobutton path="favoriteLang" value="Python"/>
+			C++ <form:radiobutton path="favoriteLang" value="C++"/>
+			<!-- Assignment -->
+			<%-- <form:radiobuttons items="${student.countryOptions}"> --%>
+			<br>
+			
+			Operating System known : 
+			<form:checkbox path="knownOS" value="Windows" label="Windows"/>
+			<form:checkbox path="knownOS" value="Linux" label="Linux"/>
+			<form:checkbox path="knownOS" value="Ubuntu" label="Ubuntu"/>
+			<form:checkbox path="knownOS" value="MacOS" label="MacOs"/>
+			<!-- Assignment -->
+			<%-- <form:checkboxes items="" path=""/> --%>
+			
+			<br><br>
+			<input type="submit" value="Submit">
 			
 		</form:form>
 	
