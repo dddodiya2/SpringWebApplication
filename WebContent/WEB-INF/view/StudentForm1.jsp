@@ -20,7 +20,9 @@
 		
 			First Name : <form:input path="firstName"></form:input>
 			<br>
+			<br>
 			Last Name : <form:input path="lastName"></form:input>
+			<br>
 			<br>
 			Country : <form:select path="country">
 						<%-- <form:option value="India" label="IND"/>
@@ -30,12 +32,14 @@
 						<form:options items="${student.countryOptions}"/>
 					</form:select>
 			<br>
+			<br>
 			Favorite Language : 
 			Java <form:radiobutton path="favoriteLang" value="Java"/> 
 			Python <form:radiobutton path="favoriteLang" value="Python"/>
 			C++ <form:radiobutton path="favoriteLang" value="C++"/>
 			<!-- Assignment -->
 			<%-- <form:radiobuttons items="${student.countryOptions}"> --%>
+			<br>
 			<br>
 			
 			Operating System known : 

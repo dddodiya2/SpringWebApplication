@@ -1,0 +1,122 @@
+
+
+********************************************************************************************************
+*******************************************SPRING WEB MVC***************************************************
+********************************************************************************************************
+
+											model				model					view
+Web browser -----------> Front Controller  ------> Controller --------> View Template -------> browser
+
+Front Controller :- 
+It remains responsible for managing the flow of the web application. DispatcherServlet acts as a front controller in spring MVC.
+Out of this Front controller is part of spring framework and is already developed by Spring. 
+Internally it is actually DispatcherServlet.
+It delegates request to our controller.
+
+Controller :-
+	It contains the logical part of the application. 
+	@Controller annotation is used to mark that class as controller.
+	Code created by developer/you.
+	Handle the request , process (service or anything). i;e contains business logic.
+	Places final output data into model.
+	Return the view name.
+	
+	
+Model :-
+	Model contains data.
+	Data can be any Java object or collection.
+	A model can be an object or collection of objects which basically contains the data of the application.
+	
+View :-
+	Usually JSP/JSTL.
+	To display data.
+	A view is used for displaying the information to the user in a specific format. Spring supports various technologies like freemarker, velocity and thymeleaf.
+	
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+@Controller
+@EnableWebMvc
+@RequestParam
+HttpServletRequest
+Model class of Spring
+
+@ModelAttribute
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+Creating forms using Spring Form tags:-
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+
+	<form:form action="processForm" modelAttribute="student">
+		First name: <form:input path="firstName">
+		<br>
+		Last name: <form:input path="lastName">
+		<br>
+		Country : <form:select path="country">
+						<form:option value="India" value="India"/>
+						<form:option value="India" value="India"/>
+						<form:option value="India" value="India">
+						<form:option value="India" value="India">
+						<form:options items="${student.countryNames}">
+				  </form:select>
+		Favorite Language :
+		Java  <form:radiobutton path="favoriteLanguage" value="Java"/>
+		C++  <form:radiobutton path="favoriteLanguage" value="C++"/>
+		
+		Operating Systems:
+		Windows <form:checkbox path="operatingsSystems" value="Windows">
+		Linux <form:checkbox path="operatingsSystems" value="Linux">
+		
+		<input type="submit" value="submit">
+	</form:form>
+	
+	<ul>
+		<c:forEach var="temp" items="${student.OperatingSystems}">
+			<li>${temp}</li>
+		</c:forEach>
+		
+	</ul>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+------------------------------------------------------------------------------
+------------------------------------------------------------------------------
+
+
+Validation using Bean Validation API.
+
+
+Add JAR for Hibernate validator (6.2) and start.
+
+
+Validations Features :-
+	required
+	validate length
+	validate numbers
+	validate with regular expressions
+	custom validations
+
+@Valid - annotation needs to be put on 	@ModelAttribute parameter
+
+	
+Some useful annotations for Validations :-
+@NotNull
+@Min
+@Max
+@Size
+@Pattern(regexp="^[a-zA-Z0-9]{5}" message="error......")
+@Future or @Past  -- for dates
+
+
+
+@InitBinder
+Use of @InitBinder as a pre processor
+It will pre process each web request to our controller.
+Method with this annotation is executed.
+
+
+Always use BindingResult just after the model/modelAttribute in method parameter of @RequestMapping
+
+
+
+
+\
