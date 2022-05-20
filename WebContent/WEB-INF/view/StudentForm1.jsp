@@ -4,9 +4,13 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Student Form</title>
+	<style>
+		.error {color:red}
+	</style>
 </head>
 <body>
 		<h1>Please fill in below form</h1>
+		<h4>* fields are mandatory</h4>
 		<hr>
 		<%-- <form action="processForm" method="get" >
 			FirstName : <input type="text" name="firstName" > 
@@ -18,11 +22,14 @@
 		
 		<form:form action="processForm1" method="get" modelAttribute="student">
 		
-			First Name : <form:input path="firstName"></form:input>
+			First Name(*) : <form:input path="firstName"></form:input>
+						 <form:errors path="firstName" cssClass="error"></form:errors>
 			<br>
 			<br>
 			Last Name : <form:input path="lastName"></form:input>
 			<br>
+			Age : <form:input path="age"/>
+				  <form:errors path="age" cssClass="error"></form:errors>
 			<br>
 			Country : <form:select path="country">
 						<%-- <form:option value="India" label="IND"/>

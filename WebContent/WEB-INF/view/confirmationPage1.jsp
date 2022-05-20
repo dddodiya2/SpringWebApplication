@@ -11,6 +11,7 @@
 	<h1>Congratulations your registration is confirmed !!!!!!!!!!!!!!</h2>
 	<h2>First Name :${student.firstName}</h2>
 	<h2>Last Name :${student.lastName}</h2> 
+	<h2>Student Age :${student.age}</h2>
 	<h2>Country : ${student.country}</h2>		 
 	<h2>Favorite Language : ${student.favoriteLang}</h2>
 	<h2>Operating Systems : </h2>

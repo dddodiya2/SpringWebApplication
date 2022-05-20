@@ -1,9 +1,14 @@
 package com.learning.mvc.controller;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.Valid;
 
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -34,6 +39,15 @@ public class MainController {
 		return "confirmationPage";
 	}
 	
+	//pre-processing for data binding
+	@InitBinder
+	public void initBinder(WebDataBinder databinder) {
+		System.out.println("Init binder method called");
+		StringTrimmerEditor stringEditor = new StringTrimmerEditor(true);
+		databinder.registerCustomEditor(String.class, stringEditor);
+	}
+	
+	
 	@RequestMapping("/showForm1")
 	public String showForm1(Model model) {		
 		Student theStudent = new Student();
@@ -42,9 +56,17 @@ public class MainController {
 	}
 	
 	@RequestMapping("/processForm1")
-	public String processForm1(@ModelAttribute("student") Student theStudent) {
-		System.out.println("The Student is : " + theStudent.getFirstName() + " " + theStudent.getLastName());
-		return "confirmationPage1";
+	public String processForm1(@Valid @ModelAttribute("student") Student theStudent, BindingResult validationResult ) {
+		
+		//if error then show StudentForm1
+		// if no error then show confirmation page
+		
+		if(validationResult.hasErrors()) {
+			return "StudentForm1";
+		}else {		
+			return "confirmationPage1";
+		}
+		
 	}
 	
 }
