@@ -57,7 +57,12 @@
 			<!-- Assignment -->
 			<%-- <form:checkboxes items="" path=""/> --%>
 			
+			<br>
+				AreaCode(*) : <form:input path="areaCode"/>
+				<form:errors path="areaCode" cssClass="error"></form:errors>
 			<br><br>
+			
+			
 			<input type="submit" value="Submit">
 			
 		</form:form>

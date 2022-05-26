@@ -92,7 +92,7 @@ Validations Features :-
 	required
 	validate length
 	validate numbers
-	validate with regular expressions
+	validate with regular expressions   --
 	custom validations
 
 @Valid - annotation needs to be put on 	@ModelAttribute parameter
@@ -117,6 +117,38 @@ Method with this annotation is executed.
 Always use BindingResult just after the model/modelAttribute in method parameter of @RequestMapping
 
 
+https://docs.spring.io/spring-framework/docs/3.2.x/spring-framework-reference/html/spring-form.tld.html
+
+------------------------------------------------------------------------------------------------------------
+Generally, when we need to validate user input, Spring MVC offers standard predefined validators.
+
+However, when we need to validate a more particular type of input, we have the ability to create our own custom validation logic. 
 
 
-\
+@NotNull
+int age ----> 
+
+
+PINCODE 
+411-028   --> 123456   --> 411028
+
+try 
+@Pattern for mobile numbers
++91 9999999999
+
+
+----------------------------------------------------------------------------------------------
+
+CouponCode ---> 10% 20% 
+		--Invalid coupon code
+
+		
+-------------------------------------------------------------
+
+
+
+Course It should start with "JAVA"  ---> 
+
+using custom validation 
+
+We will create our own Annotation 

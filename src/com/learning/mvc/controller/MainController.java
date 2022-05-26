@@ -64,6 +64,10 @@ public class MainController {
 		if(validationResult.hasErrors()) {
 			return "StudentForm1";
 		}else {		
+			
+			///I can add some more data to model ..... and send it to next page 
+			///Data specific to form as well		
+			
 			return "confirmationPage1";
 		}
 		

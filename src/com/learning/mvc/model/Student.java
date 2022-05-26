@@ -6,7 +6,10 @@ import java.util.Map;
 
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.pl.REGON;
 
 public class Student {
 
@@ -20,15 +23,30 @@ public class Student {
 	private Map<String, String> countryOptions;
 	
 	@Min(value = 15, message = "Age should more than or equal to 15 Years")
-	private int age;
+	@NotNull(message = "Please enter valid age")
+	private Integer age;
+	
+	@NotNull(message = "Area code is a mandatory field")
+	@Pattern(regexp = "^[0-9]{3}[-]{1}[0-9]{3}", message = "Area code should be six digit long" )
+	private String areaCode;
 	
 	
-	public int getAge() {
+	public String getAreaCode() {
+		return areaCode;
+	}
+
+
+	public void setAreaCode(String areaCode) {
+		this.areaCode = areaCode;
+	}
+
+
+	public Integer getAge() {
 		return age;
 	}
 
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 
