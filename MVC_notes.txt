@@ -152,3 +152,6 @@ Course It should start with "JAVA"  --->
 using custom validation 
 
 We will create our own Annotation 
+
+Prepare Notes for this
+

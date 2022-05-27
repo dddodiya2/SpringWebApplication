@@ -60,6 +60,10 @@
 			<br>
 				AreaCode(*) : <form:input path="areaCode"/>
 				<form:errors path="areaCode" cssClass="error"></form:errors>
+			<br>
+				Course Code : <form:input path="courseCode"/>
+				<form:errors path="courseCode" cssClass="error"></form:errors>	
+				
 			<br><br>
 			
 			
